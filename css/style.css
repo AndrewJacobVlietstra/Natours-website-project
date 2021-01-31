@@ -55,13 +55,15 @@ body {
     left: 50%;
     /* Translates 50% of the heading-box's width and height of itself */
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
-    text-align: center;
+
     /* Used to fix weird shaking that can occur in animations */
     backface-visibility: hidden;
+    margin-bottom: 3.4rem;
 }
 .heading-primary-main {
     display: block;
@@ -108,4 +110,80 @@ body {
         opacity: 1;
         transform: translateX(0px);
     }
+}
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    80% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* General Button properties */
+.btn:link,
+.btn:visited {
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.25s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 2px 8px 12px;
+}
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 1px 5px 10px;
+}
+.btn:focus {
+    outline: none;
+}
+
+/* Hiding a second button with the same dimensions behind the original button, */
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.35s;
+}
+/* The "after" button will scale up and become transparent when hovering over the regular button */
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+/* Properties for White button and the second button hiding behind the first button */
+.btn-white {
+    color: #777;
+    background-color: #fff;
+    padding: 1rem 1.80rem;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn-animated {
+    animation: moveInUp 1.5s ease-in-out 0.7s;
+
+    /* backwards will auto apply the initial conditions in the keyframe, the 0% conditions */
+    animation-fill-mode: backwards;
 }
