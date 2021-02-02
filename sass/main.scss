@@ -8,6 +8,7 @@ $color-primary-dark: #28b485;
 
 $color-gray-dark: #777;
 $color-white: #fff;
+$color-black: #000;
 $color-button-shadow: #444;
 
 
@@ -55,26 +56,28 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 40px;
+    }
+    
+    &__heading-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* Translates 50% of the heading-box's width and height of itself */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
-.header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-.header__logo {
-    height: 40px;
-}
 
-
-.header__heading-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* Translates 50% of the heading-box's width and height of itself */
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
 .heading-primary {
     color: $color-white;
     text-transform: uppercase;
@@ -82,21 +85,24 @@ body {
     /* Used to fix weird shaking that can occur in animations */
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft 1.75s ease-in-out;
+    }
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.7rem;
+        animation: moveInRight 1.75s ease-in-out;
+    }
 }
-.heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 1.75s ease-in-out;
-}
-.heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation: moveInRight 1.75s ease-in-out;
-}
+
+// KEYFRAME ANIMATIONS
 
 @keyframes moveInLeft {
     0% {
@@ -146,63 +152,72 @@ body {
     }
 }
 
-/* General Button properties */
-.btn:link,
-.btn:visited {
-    position: relative;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-    padding: 1.5rem 3.5rem;
-    font-size: 1.6rem;
-    border-radius: 10rem;
-    transition: all 0.25s;
-}
 
-.btn:hover {
-    transform: translateY(-0.4rem);
-    box-shadow: 0.2rem 0.8rem 1.2rem $color-button-shadow;
-}
-.btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0.1rem 0.5rem 1rem $color-button-shadow;
-}
-.btn:focus {
-    outline: none;
-}
 
-/* Hiding a second button with the same dimensions behind the original button */
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.35s;
-}
-/* The "after" button will scale up and become transparent when hovering over the regular button */
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
 
-/* Properties for White button and the second button hiding behind the first button */
-.btn--white {
-    color: $color-gray-dark;
-    background-color: $color-white;
-}
+// Buttons Properties
+.btn {
 
-.btn--white::after {
-    background-color: $color-white;
-}
+    &:link,
+    &:visited {
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1.5rem 3.5rem;
+        font-size: 1.6rem;
+        border-radius: 10rem;
+        transition: all 0.25s;
+    }
 
-.btn--animated {
-    animation: moveInUp 1.6s ease-in-out 0.7s;
+    &:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0.2rem 0.8rem 1.2rem $color-button-shadow;
 
-    /* backwards will auto apply the initial conditions in the keyframe, the 0% conditions */
-    animation-fill-mode: backwards;
+        /* The "after" button will scale up and become transparent when hovering over the regular button */
+        &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        }
+    }
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0.1rem 0.5rem 1rem $color-button-shadow;
+    }
+    &:focus {
+        outline: none;
+    }
+    
+    /* Hiding a second button with the same dimensions behind the original button */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.35s;
+    }
+    
+    /* Properties for White button and the second button hiding behind the first button */
+    &--white {
+        color: $color-gray-dark;
+        background-color: $color-white;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    
+    
+    // Applying animation to the landing page button
+    &--animated {
+        animation: moveInUp 1.6s ease-in-out 0.7s;
+    
+        /* backwards will auto apply the initial conditions in the keyframe, the 0% conditions */
+        animation-fill-mode: backwards;
+    }  
 }

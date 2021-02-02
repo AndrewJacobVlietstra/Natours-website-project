@@ -189,9 +189,12 @@ body {
   }
 }
 
-/* General Button properties */
-.btn:link,
-.btn:visited {
+.btn {
+  /* Hiding a second button with the same dimensions behind the original button */
+  /* Properties for White button and the second button hiding behind the first button */
+}
+
+.btn:link, .btn:visited {
   position: relative;
   text-transform: uppercase;
   text-decoration: none;
@@ -208,6 +211,13 @@ body {
           transform: translateY(-0.4rem);
   -webkit-box-shadow: 0.2rem 0.8rem 1.2rem #444;
           box-shadow: 0.2rem 0.8rem 1.2rem #444;
+  /* The "after" button will scale up and become transparent when hovering over the regular button */
+}
+
+.btn:hover::after {
+  -webkit-transform: scaleX(1.4) scaleY(1.6);
+          transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
 }
 
 .btn:active {
@@ -221,7 +231,6 @@ body {
   outline: none;
 }
 
-/* Hiding a second button with the same dimensions behind the original button */
 .btn::after {
   content: "";
   display: inline-block;
@@ -236,14 +245,6 @@ body {
   transition: all 0.35s;
 }
 
-/* The "after" button will scale up and become transparent when hovering over the regular button */
-.btn:hover::after {
-  -webkit-transform: scaleX(1.4) scaleY(1.6);
-          transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-/* Properties for White button and the second button hiding behind the first button */
 .btn--white {
   color: #777;
   background-color: #fff;
