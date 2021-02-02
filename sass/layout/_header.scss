@@ -1,0 +1,33 @@
+/* HEADER SECTION */
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(
+        to right, 
+        rgba($color-primary-light, 0.77), 
+        rgba($color-primary-dark, 0.77)), 
+        url('../img/hero.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+
+    &__logo {
+        height: 40px;
+    }
+    
+    &__heading-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        /* Translates 50% of the heading-box's width and height of itself */
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

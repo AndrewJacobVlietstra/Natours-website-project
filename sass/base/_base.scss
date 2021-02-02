@@ -1,0 +1,21 @@
+/* Global Reset for browsers */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Root font size is in the html element, rem is a relative unit based off root font-size!
+    If font-size is 10px then 1rem = 10px
+    If font-size is 16px then 1rem = 16px  etc.. */
+html {
+    /* Default browser font size is 16px, so 100% would be 16px. We want 10 Pixels. 10px/16px = 62.5% */
+    // This defines 1 rem as 10px so its a global base definition
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}

@@ -1,0 +1,66 @@
+// Buttons Properties
+.btn {
+
+    &:link,
+    &:visited {
+        position: relative;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1.5rem 3.5rem;
+        font-size: 1.6rem;
+        border-radius: 10rem;
+        transition: all 0.25s;
+    }
+
+    &:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0.2rem 0.8rem 1.2rem $color-button-shadow;
+
+        /* The "after" button will scale up and become transparent when hovering over the regular button */
+        &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+        }
+    }
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0.1rem 0.5rem 1rem $color-button-shadow;
+    }
+    &:focus {
+        outline: none;
+    }
+    
+    /* Hiding a second button with the same dimensions behind the original button */
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.35s;
+    }
+    
+    /* Properties for White button and the second button hiding behind the first button */
+    &--white {
+        color: $color-gray-dark;
+        background-color: $color-white;
+
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    
+    
+    // Applying animation to the landing page button
+    &--animated {
+        animation: moveInUp 1.6s ease-in-out 0.7s;
+    
+        /* backwards will auto apply the initial conditions in the keyframe, the 0% conditions */
+        animation-fill-mode: backwards;
+    }  
+}
