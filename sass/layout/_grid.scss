@@ -1,7 +1,6 @@
 
 .row {
     max-width: $grid-width;
-    background-color: #aaa;
     margin: 0 auto;
 
     // Apply bottom margin to all div elements, but not the last child
@@ -15,8 +14,8 @@
     // Selects all elements with class attribute starting with "col-", attribute selector selecting all columns
     // (^ is starts with), (* is contains, could be anywhere), ($ means ends with)
     [class^="col-"] {
-        background-color: orangered;
-        color: $color-white;
+
+        color: $color-gray-dark;
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
