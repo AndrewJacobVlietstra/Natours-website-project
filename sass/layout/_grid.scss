@@ -9,6 +9,7 @@
         margin-bottom: $gutter-vertical;
     }
 
+    // Clearfix to fix weird float behaviour for every row
     @include clearfix;
 
     // Selects all elements with class attribute starting with "col-", attribute selector selecting all columns
@@ -22,6 +23,7 @@
         }
     }
 
+    // Various column width being calculated using calc function
     .col-1-of-2 {
         width: calc((100% - #{$gutter-horizontal}) / 2);
     }
