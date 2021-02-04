@@ -91,7 +91,7 @@
     }
 
     &__heading-span {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem;
         // Provides padding on both side for inline elements when line break occurs
         box-decoration-break: clone;
 
@@ -153,7 +153,6 @@
     &__price-value {
         font-size: 7rem;
         font-weight: 100;
-
     }
 
 

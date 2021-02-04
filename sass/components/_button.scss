@@ -71,7 +71,8 @@
     
         /* backwards will auto apply the initial conditions in the keyframe, the 0% conditions */
         animation-fill-mode: backwards;
-    }  
+    }
+
 }
 
 .btn-text {
@@ -97,4 +98,7 @@
         box-shadow: 0rem 0.5rem 1rem rgba($color-black, 0.2);
         transform: translateY(-0px);
     }
+
+
+    
 }

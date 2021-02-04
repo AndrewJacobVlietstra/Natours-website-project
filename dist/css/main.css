@@ -208,8 +208,34 @@ body {
   margin-bottom: 8rem;
 }
 
+.utility-margin-top-small {
+  margin-top: 1.5rem;
+}
+
+.utility-margin-top-medium {
+  margin-top: 4rem;
+}
+
 .utility-margin-top-big {
   margin-top: 8rem;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+  overflow: hidden;
+}
+
+.bg-video__content {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .btn {
@@ -417,7 +443,7 @@ body {
 }
 
 .card__heading-span {
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   -webkit-box-decoration-break: clone;
           box-decoration-break: clone;
 }
@@ -553,6 +579,110 @@ body {
           transform: translateY(-1.5rem) scale(1.05);
 }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form__input {
+  font-family: inherit;
+  color: inherit;
+  font-size: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 90%;
+  display: block;
+}
+
+.form__input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  border-bottom: 3px solid #55c57a;
+}
+
+.form__input:focus:invalid {
+  border-bottom: 3px solid #ff7730;
+}
+
+.form__input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.story {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.55);
+  width: 75%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  -webkit-transform: skewX(-12deg);
+          transform: skewX(-12deg);
+}
+
+.story__shape {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  float: left;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
+  clip-path: circle(50% at 50% 50%);
+  -webkit-transform: translateX(-3rem) skewX(12deg);
+          transform: translateX(-3rem) skewX(12deg);
+}
+
+.story__img {
+  height: 100%;
+  -webkit-transform: translateX(-3.5rem) scale(1.4);
+          transform: translateX(-3.5rem) scale(1.4);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.story__text {
+  -webkit-transform: skewX(12deg);
+          transform: skewX(12deg);
+}
+
+.story__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  text-align: center;
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.story:hover .story__caption {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.story:hover .story__img {
+  -webkit-transform: translateX(-3.5rem) scale(1);
+          transform: translateX(-3.5rem) scale(1);
+  -webkit-filter: blur(2px) brightness(80%);
+          filter: blur(2px) brightness(80%);
+}
+
 .row {
   max-width: 114rem;
   margin: 0 auto;
@@ -659,5 +789,31 @@ body {
   background-color: #f7f7f7;
   padding: 20rem 0;
   margin-top: -10vh;
+}
+
+.section-stories {
+  position: relative;
+  padding: 15rem 0;
+}
+
+.section-booking {
+  padding: 15rem 0;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+
+.booking {
+  background-image: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.9) 50%, transparent 50%), url("../../dist/img/nat-10.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2);
+  height: 50rem;
+}
+
+.booking__form {
+  width: 50%;
+  padding: 6rem;
 }
 /*# sourceMappingURL=main.css.map */
