@@ -29,8 +29,6 @@
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000;
         transition: transform 1s cubic-bezier(0.83, 0, 0.17, 1);
-        
-
     }
 
     &__nav {
@@ -75,6 +73,7 @@
         background-size: 240%;
         transition: all 0.4s;
         }
+        
 
         &:hover,
         &:active {
@@ -82,6 +81,8 @@
             color: $color-primary;
             transform: translateX(-1rem);
         }
+
+        
     }
 
     &__checkbox:checked ~ &__background {

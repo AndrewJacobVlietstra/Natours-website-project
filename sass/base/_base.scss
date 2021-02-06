@@ -14,6 +14,7 @@ html {
     /* Default browser font size is 16px, so 100% would be 16px. We want 10 Pixels. 10px/16px = 62.5% */
     // This defines 1 rem as 10px so its a global base definition
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
